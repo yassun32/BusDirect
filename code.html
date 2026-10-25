@@ -1,213 +1,268 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="ar" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BusDirect - Gestion des réservations</title>
+    <title>BusDirect - Réservation</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="code.js" defer></script>
 </head>
 
-<body class="bg-slate-100 text-slate-700 font-sans">
-    <header class="bg-white border-b border-slate-200 px-6 py-3 flex items-center justify-between">
-        <div class="flex items-center gap-8">
-            <div class="flex items-center gap-3">
-                <div class="bg-slate-800 text-white p-2 rounded-lg flex items-center justify-center w-9 h-9">
-                    <img src="img/bus.png" alt="icon bus" object-contain">
-                </div>
-                <span class="font-bold text-xl text-slate-800">BusDirect</span>
-            </div>
-            <nav class="hidden md:flex items-center gap-6 text-sm text-slate-600 font-medium">
-                <a href="#" class="flex items-center gap-2 hover:text-slate-900">
-                    <img src="table.png" alt="icon table" class="w-4 h-4 object-contain">
-                    Tableau de bord
-                </a>
-                <a href="#" class="flex items-center gap-2 text-slate-900 font-semibold border-b-2 border-slate-900 pb-1">
-                    <img src="reservation.png" alt="icon reservation" class="w-4 h-4 object-contain">
-                    Réservations
-                </a>
-                <a href="#" class="flex items-center gap-2 hover:text-slate-900">
-                    <img src="tickets.png" alt="icon tickets" class="w-4 h-4 object-contain">
-                    Tickets
-                </a>
-                <a href="#" class="flex items-center gap-2 hover:text-slate-900">
-                    <img src="parametre.png" alt="icon parametre" class="w-4 h-4 object-contain">
-                    Paramètres
-                </a>
-            </nav>
+<body class="bg-blue-50 min-h-screen flex flex-col">
+
+    <header class="bg-white p-4 shadow flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <img src="img/bus.png " alt="bus icon">
+            <span class="bg-blue-700 text-white p-2 rounded">BusDirect</span>
         </div>
-            </div>
-        </div>
+        <nav>
+            <ul class="flex gap-4 items-center">
+                <li class="text-blue-700 font-semibold">Réservation</li>
+                <li><a href="#tickets.html" class="text-black-600">Tickets <span
+                            class="bg-black-200 text-xs px-1 rounded">3</span></a></li>
+                <li><span class="bg-blue-700 text-white p-2 rounded-full material-icons">
+                    </span></li>
+            </ul>
+        </nav>
     </header>
-    <main class="max-w-7xl mx-auto p-6 space-y-6">
-        <header>
-            <p class="text-xs text-slate-400 mb-1">Exploitation / Tableau de bord</p>
-            <h1 class="text-2xl font-bold text-slate-900">Gestion des réservations</h1>
-            <p class="text-sm text-slate-500">Gérez les sièges et les passagers de votre trajet.</p>
-        </header>
-        <nav class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 flex flex-wrap items-center justify-between gap-4">
-            <div>
-                <h3 class="font-bold text-slate-800 text-lg flex items-center gap-2">
-                    <img src="route.png" alt="icon route" class="w-4 h-4 object-contain">
-                    Safi &rarr; Marrakech
-                </h3>
-                <p class="text-xs text-slate-500">Départ à 09:00 · Bus BD-102 · 20 places</p>
+
+    <main class="flex-grow p-6">
+
+        <nav class="bg-white p-4 rounded-lg shadow mb-6 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <span class="font-bold">Safi -> Marrakech</span>
+                <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">80 DH / place</span>
             </div>
-            <div class="flex items-center gap-4">
-                <span class="bg-emerald-50 text-emerald-600 text-xs px-3 py-1.5 rounded-full font-semibold border border-emerald-200 flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Réservations ouvertes
-                </span>
-                <button type="button" class="bg-slate-50 border border-slate-200 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-700 flex items-center gap-2 hover:bg-slate-100">
-                    <img src="calendar.png" alt="icon calendar" class="w-4 h-4 object-contain">
-                    19 octobre 2026
-                </button>
+            <div class="flex gap-4 text-sm">
+                <span class="flex items-center gap-1"><span
+                        class="w-3 h-3 bg-white border border-black-300 rounded block"></span> Libre</span>
+                <span class="flex items-center gap-1"><span
+                        class="w-3 h-3 bg-red-100 border border-red-300 rounded block"></span> Occupé</span>
             </div>
         </nav>
-        <aside class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-                <div class="flex justify-between items-start mb-2">
-                    <span class="text-xs text-slate-500 font-medium">Recette totale</span>
-                    <span class="p-2 bg-blue-50 rounded-lg">
-                        <img src="wallet.png" alt="recette" class="w-4 h-4 object-contain">
-                    </span>
-                </div>
-                <p class="text-3xl font-extrabold text-slate-900">640 <span class="text-base text-slate-500 font-normal">DH</span></p>
-                <p class="text-[11px] text-slate-400 mt-6">8 / 20 réservations · 80 DH / place</p>
-            </div>
-        </aside>
-            <div class="lg:col-span-2 bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-6">
-                <div class="flex justify-between items-center">
-                    <div>
-                        <h2 class="font-bold text-slate-800">Plan de la cabine</h2>
-                        <p class="text-xs text-slate-400">Sélectionnez un siège pour gérer une réservation.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <section class="md:col-span-2 bg-white rounded-lg shadow p-6">
+                <header class="flex justify-between items-center mb-6 pb-4 border-b">
+                    <span class="font-semibold text-black-700"></span>
+                    <div class="text-sm text-black-600">
+                        20 places totales • 
+                        <span class="text-green-600 font-semibold">20 disponibles</span>
+                        • Recette: 80 DH
                     </div>
-                    <span class="bg-slate-100 text-slate-600 text-xs px-2.5 py-1 rounded-md font-medium">20 places</span>
-                </div>
-                <div class="flex items-center gap-6 text-xs text-slate-500">
-                    <div class="flex items-center gap-2"><span class="w-3 h-3 border border-emerald-400 bg-emerald-50 rounded"></span> Libre</div>
-                    <div class="flex items-center gap-2"><span class="w-3 h-3 border border-rose-300 bg-rose-50 rounded"></span> Occupé</div>
-                </div>
-                <section class="bg-slate-50 border border-slate-200 rounded-2xl p-6 relative">
-                    <div class="flex justify-between items-center text-xs text-slate-400 mb-6 border-b border-slate-200 pb-3">
-                        <span class="flex items-center gap-1">
-                            <img src="wheel.png" alt="chauffeur" class="w-4 h-4 object-contain">
-                            Chauffeur
-                        </span>
-                        <span>AVANT &uarr;</span>
+                </header>
+
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <div class="bg-white p-3 rounded mb-6 text-center text-sm font-semibold border inline-block">
+                        Poste Conducteur
                     </div>
-                    <div class="grid grid-cols-4 gap-4">
-                        <div class="bg-rose-50 border border-rose-200 p-3 rounded-xl flex justify-between items-start">
-                            <div>
-                                <span class="font-bold text-slate-800 text-sm block">01</span>
-                                <span class="text-[10px] text-slate-500 block truncate max-w-[70px]">Amine Alaoui</span>
-                            </div>
-                            <img src="user.png" alt="user" class="w-3.5 h-3.5 object-contain">
+
+                    <div class="grid grid-cols-4 gap-4 text-center">
+                        <div id="1"
+                            class="bg-white p-4 rounded shadow border border-black-200 cursor-pointer hover:bg-black-50">
+                            <div class="text-lg font-bold text-green-700">1</div>
+                            <p class="text-xs text-black-400">Libre</p>
                         </div>
-                        <div class="bg-rose-50 border border-rose-200 p-3 rounded-xl flex justify-between items-start">
-                            <div>
-                                <span class="font-bold text-slate-800 text-sm block">02</span>
-                                <span class="text-[10px] text-slate-500 block truncate max-w-[70px]">Salma Idrissi</span>
-                            </div>
-                            <img src="user.png" alt="user" class="w-3.5 h-3.5 object-contain">
+                        <div id="2"
+                            class="bg-white p-4 rounded shadow border border-black-200 cursor-pointer hover:bg-black-50">
+                            <div class="text-lg font-bold text-green-700">2</div>
+                            <p class="text-xs text-black-400">Libre</p>
                         </div>
-                        <div class="bg-emerald-50 border border-emerald-300 p-3 rounded-xl flex justify-between items-start cursor-pointer hover:bg-emerald-100">
-                            <div>
-                                <span class="font-bold text-slate-800 text-sm block">03</span>
-                                <span class="text-[10px] text-emerald-600 block">Libre</span>
-                            </div>
-                            <img src="seat.png" alt="seat" class="w-3.5 h-3.5 object-contain">
+                        <div id="3"
+                            class="bg-white p-4 rounded shadow border border-black-200 cursor-pointer hover:bg-black-50">
+                            <div class="text-lg font-bold text-green-700">3</div>
+                            <p class="text-xs text-black-400">Libre</p>
                         </div>
-                        <div class="bg-rose-50 border border-rose-200 p-3 rounded-xl flex justify-between items-start">
-                            <div>
-                                <span class="font-bold text-slate-800 text-sm block">04</span>
-                                <span class="text-[10px] text-slate-500 block truncate max-w-[70px]">Omar Bennani</span>
-                            </div>
-                            <img src="user.png" alt="user" class="w-3.5 h-3.5 object-contain">
+                        <div id="4"
+                            class="bg-white p-4 rounded shadow border border-black-200 cursor-pointer hover:bg-black-50">
+                            <div class="text-lg font-bold text-green-700">4</div>
+                            <p class="text-xs text-black-400">Libre</p>
                         </div>
-                        <div class="bg-emerald-50 border border-emerald-300 p-3 rounded-xl flex justify-between items-start cursor-pointer hover:bg-emerald-100">
-                            <div>
-                                <span class="font-bold text-slate-800 text-sm block">05</span>
-                                <span class="text-[10px] text-emerald-600 block">Libre</span>
-                            </div>
-                            <img src="seat.png" alt="seat" class="w-3.5 h-3.5 object-contain">
+                        <div id="5"
+                            class="bg-white p-4 rounded shadow border border-black-200 cursor-pointer hover:bg-black-50">
+                            <div class="text-lg font-bold text-green-700">5</div>
+                            <p class="text-xs text-black-400">Libre</p>
                         </div>
-                        <div class="bg-rose-50 border border-rose-200 p-3 rounded-xl flex justify-between items-start">
-                            <div>
-                                <span class="font-bold text-slate-800 text-sm block">06</span>
-                                <span class="text-[10px] text-slate-500 block truncate max-w-[70px]">Inès El Fassi</span>
-                            </div>
-                            <img src="user.png" alt="user" class="w-3.5 h-3.5 object-contain">
+                        <div id="6"
+                            class="bg-white p-4 rounded shadow border border-black-200 cursor-pointer hover:bg-black-50">
+                            <div class="text-lg font-bold text-green-700">6</div>
+                            <p class="text-xs text-black-400">Libre</p>
                         </div>
-                        <div class="bg-blue-50 border-2 border-blue-500 p-3 rounded-xl flex justify-between items-start cursor-pointer">
-                            <div>
-                                <span class="font-bold text-blue-900 text-sm block">07</span>
-                                <span class="text-[10px] text-blue-600 block">Sélectionné</span>
-                            </div>
-                            <img src="check.png" alt="selected" class="w-3.5 h-3.5 object-contain">
+                        <div id="7"
+                            class="bg-white p-4 rounded shadow border border-black-200 cursor-pointer hover:bg-black-50">
+                            <div class="text-lg font-bold text-green-700">7</div>
+                            <p class="text-xs text-black-400">Libre</p>
                         </div>
-                        <div class="bg-emerald-50 border border-emerald-300 p-3 rounded-xl flex justify-between items-start cursor-pointer hover:bg-emerald-100">
-                            <div>
-                                <span class="font-bold text-slate-800 text-sm block">08</span>
-                                <span class="text-[10px] text-emerald-600 block">Libre</span>
-                            </div>
-                            <img src="seat.png" alt="seat" class="w-3.5 h-3.5 object-contain">
+                        <div id="12"
+                            class="bg-white p-4 rounded shadow border border-black-200 cursor-pointer hover:bg-black-50">
+                            <div class="text-lg font-bold text-green-700">12</div>
+                            <p class="text-xs text-black-400">Libre</p>
                         </div>
-                        <div class="bg-rose-50 border border-rose-200 p-3 rounded-xl flex justify-between items-start">
-                            <div><span class="font-bold text-slate-800 text-sm block">09</span><span class="text-[10px] text-slate-500 block truncate max-w-[70px]">Youssef Naciri</span></div>
-                            <img src="user.png" alt="user" class="w-3.5 h-3.5 object-contain">
+                        <div id="9"
+                            class="bg-white p-4 rounded shadow border border-black-200 cursor-pointer hover:bg-black-50">
+                            <div class="text-lg font-bold text-green-700">9</div>
+                            <p class="text-xs text-black-400">Libre</p>
                         </div>
-                        <div class="bg-emerald-50 border border-emerald-300 p-3 rounded-xl flex justify-between items-start cursor-pointer">
-                            <div><span class="font-bold text-slate-800 text-sm block">10</span><span class="text-[10px] text-emerald-600 block">Libre</span></div>
-                            <img src="seat.png" alt="seat" class="w-3.5 h-3.5 object-contain">
+                        <div id="10"
+                            class="bg-white p-4 rounded shadow border border-black-200 cursor-pointer hover:bg-black-50">
+                            <div class="text-lg font-bold text-green-700">10</div>
+                            <p class="text-xs text-black-400">Libre</p>
                         </div>
-                        <div class="bg-rose-50 border border-rose-200 p-3 rounded-xl flex justify-between items-start">
-                            <div><span class="font-bold text-slate-800 text-sm block">11</span><span class="text-[10px] text-slate-500 block truncate max-w-[70px]">Sara Berrada</span></div>
-                            <img src="user.png" alt="user" class="w-3.5 h-3.5 object-contain">
+                        <div id="11"
+                            class="bg-white p-4 rounded shadow border border-black-200 cursor-pointer hover:bg-black-50">
+                            <div class="text-lg font-bold text-green-700">11</div>
+                            <p class="text-xs text-black-400">Libre</p>
                         </div>
-                        <div class="bg-emerald-50 border border-emerald-300 p-3 rounded-xl flex justify-between items-start cursor-pointer">
-                            <div><span class="font-bold text-slate-800 text-sm block">12</span><span class="text-[10px] text-emerald-600 block">Libre</span></div>
-                            <img src="seat.png" alt="seat" class="w-3.5 h-3.5 object-contain">
+                        <div id="12"
+                            class="bg-white p-4 rounded shadow border border-black-200 cursor-pointer hover:bg-black-50">
+                            <div class="text-lg font-bold text-green-700">12</div>
+                            <p class="text-xs text-black-400">Libre</p>
+                        </div>
+                        <div id="12"
+                            class="bg-white p-4 rounded shadow border border-black-200 cursor-pointer hover:bg-black-50">
+                            <div class="text-lg font-bold text-green-700">12</div>
+                            <p class="text-xs text-black-400">Libre</p>
+                        </div>
+                        <div id="12"
+                            class="bg-white p-4 rounded shadow border border-black-200 cursor-pointer hover:bg-black-50">
+                            <div class="text-lg font-bold text-green-700">12</div>
+                            <p class="text-xs text-black-400">Libre</p>
+                        </div>
+                        <div id="15"
+                            class="bg-white p-4 rounded shadow border border-black-200 cursor-pointer hover:bg-black-50">
+                            <div class="text-lg font-bold text-green-700">15</div>
+                            <p class="text-xs text-black-400">Libre</p>
+                        </div>
+                        <div id="16"
+                            class="bg-white p-4 rounded shadow border border-black-200 cursor-pointer hover:bg-black-50">
+                            <div class="text-lg font-bold text-green-700">16</div>
+                            <p class="text-xs text-black-400">Libre</p>
+                        </div>
+                        <div id="17"
+                            class="bg-white p-4 rounded shadow border border-black-200 cursor-pointer hover:bg-black-50">
+                            <div class="text-lg font-bold text-green-700">17</div>
+                            <p class="text-xs text-black-400">Libre</p>
                         </div>
 
-                        <div class="bg-emerald-50 border border-emerald-300 p-3 rounded-xl flex justify-between items-start cursor-pointer">
-                            <div><span class="font-bold text-slate-800 text-sm block">13</span><span class="text-[10px] text-emerald-600 block">Libre</span></div>
-                            <img src="seat.png" alt="seat" class="w-3.5 h-3.5 object-contain">
+                        <div id="18"
+                            class="bg-white p-4 rounded shadow border border-black-200 cursor-pointer hover:bg-black-50">
+                            <div class="text-lg font-bold text-green-700">18</div>
+                            <p class="text-xs text-black-400">Libre</p>
                         </div>
-                        <div class="bg-rose-50 border border-rose-200 p-3 rounded-xl flex justify-between items-start">
-                            <div><span class="font-bold text-slate-800 text-sm block">14</span><span class="text-[10px] text-slate-500 block truncate max-w-[70px]">Mehdi Tazi</span></div>
-                            <img src="user.png" alt="user" class="w-3.5 h-3.5 object-contain">
+                        <div id="19"
+                            class="bg-white p-4 rounded shadow border border-black-200 cursor-pointer hover:bg-black-50">
+                            <div class="text-lg font-bold text-green-700">19</div>
+                            <p class="text-xs text-black-400">Libre</p>
                         </div>
-                        <div class="bg-emerald-50 border border-emerald-300 p-3 rounded-xl flex justify-between items-start cursor-pointer">
-                            <div><span class="font-bold text-slate-800 text-sm block">15</span><span class="text-[10px] text-emerald-600 block">Libre</span></div>
-                            <img src="seat.png" alt="seat" class="w-3.5 h-3.5 object-contain">
-                        </div>
-                        <div class="bg-emerald-50 border border-emerald-300 p-3 rounded-xl flex justify-between items-start cursor-pointer">
-                            <div><span class="font-bold text-slate-800 text-sm block">16</span><span class="text-[10px] text-emerald-600 block">Libre</span></div>
-                            <img src="seat.png" alt="seat" class="w-3.5 h-3.5 object-contain">
+                        <div id="20"
+                            class="bg-white p-4 rounded shadow border border-black-200 cursor-pointer hover:bg-black-50">
+                            <div class="text-lg font-bold text-green-700">20</div>
+                            <p class="text-xs text-black-400">Libre</p>
                         </div>
 
-                        <div class="bg-emerald-50 border border-emerald-300 p-3 rounded-xl flex justify-between items-start cursor-pointer">
-                            <div><span class="font-bold text-slate-800 text-sm block">17</span><span class="text-[10px] text-emerald-600 block">Libre</span></div>
-                            <img src="seat.png" alt="seat" class="w-3.5 h-3.5 object-contain">
-                        </div>
-                        <div class="bg-rose-50 border border-rose-200 p-3 rounded-xl flex justify-between items-start">
-                            <div><span class="font-bold text-slate-800 text-sm block">18</span><span class="text-[10px] text-slate-500 block truncate max-w-[70px]">Lina Amrani</span></div>
-                            <img src="user.png" alt="user" class="w-3.5 h-3.5 object-contain">
-                        </div>
-                        <div class="bg-emerald-50 border border-emerald-300 p-3 rounded-xl flex justify-between items-start cursor-pointer">
-                            <div><span class="font-bold text-slate-800 text-sm block">19</span><span class="text-[10px] text-emerald-600 block">Libre</span></div>
-                            <img src="seat.png" alt="seat" class="w-3.5 h-3.5 object-contain">
-                        </div>
-                        <div class="bg-emerald-50 border border-emerald-300 p-3 rounded-xl flex justify-between items-start cursor-pointer">
-                            <div><span class="font-bold text-slate-800 text-sm block">20</span><span class="text-[10px] text-emerald-600 block">Libre</span></div>
-                            <img src="seat.png" alt="seat" class="w-3.5 h-3.5 object-contain">
-                        </div>
                     </div>
-                    <p class="text-[10px] text-center text-slate-400 mt-6 tracking-wider">ARRIÈRE DU VÉHICULE</p>
+                </div>
+            </section>
+
+            <aside class="flex flex-col gap-6">
+
+                <section class="bg-white p-6 rounded-lg shadow">
+                    <h2 class="font-bold text-black-800 mb-4 pb-2 border-b">Réserver une place</h2>
+                    <form id="formule" class="flex flex-col gap-4">
+                        <div>
+                            <label class="block text-sm text-black-600 mb-1">Passager</label>
+                            <input id="nome" type="text" placeholder="Ex: Thomas Martin"
+                                class="w-full border rounded p-2 text-sm bg-black-50">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-black-600 mb-1">Siège sélectionné</label>
+                            <div class="flex gap-2">
+                                <select id="availbelseats" class="w-full border rounded p-2 text-sm bg-black-50">
+                                    <option value="">-- Siège libre --</option>
+                                    <option value="1">Siège: 1</option>
+                                    <option value="2">Siège: 2</option>
+                                    <option value="3">Siège: 3</option>
+                                    <option value="4">Siège: 4</option>
+                                    <option value="5">Siège: 5</option>
+                                    <option value="6">Siège: 6</option>
+                                    <option value="7">Siège: 7</option>
+                                    <option value="8">Siège: 8</option>
+                                    <option value="9">Siège: 9</option>
+                                    <option value="10">Siège: 10</option>
+                                    <option value="11">Siège: 11</option>
+                                    <option value="12">Siège: 12</option>
+                                    <option value="13">Siège: 13</option>
+                                    <option value="14">Siège: 14</option>
+                                    <option value="15">Siège: 15</option>
+                                    <option value="16">Siège: 16</option>
+                                    <option value="17">Siège: 17</option>
+                                    <option value="18">Siège: 18</option>
+                                    <option value="19">Siège: 19</option>
+                                    <option value="20">Siège: 20</option>
+                                </select>
+                                <button type="submit"
+                                    class="bg-blue-700 text-white px-4 py-2 rounded text-sm font-semibold">Confirmer</button>
+                            </div>
+                        </div>
+                        <!-- <p class="bg-green-600 text-white px-4 py-2 rounded ">Selection un siège !</p>
+                        <p class="bg-red-600 text-white px-4 py-2 rounded ">Selection un siège !</p>-->
+
+                    </form>
                 </section>
-            </div>
-            
+
+                <section class="bg-white p-6 rounded-lg shadow">
+                    <h2 class="font-bold text-black-800 mb-4 pb-2 border-b">Modifier une place</h2>
+                    <form class="flex flex-col gap-4">
+                        <div>
+                            <label class="block text-sm text-black-600 mb-1">Passager existant</label>
+                            <select class="w-full border rounded p-2 text-sm bg-black-50">
+                                <option>-- Choisir passager --</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm text-black-600 mb-1">Nom du passager</label>
+                            <input type="text" placeholder="Modifier le nom"
+                                class="w-full border rounded p-2 text-sm bg-black-50">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-black-600 mb-1">Nouveau siège</label>
+                            <div class="flex gap-2">
+                                <select class="w-full border rounded p-2 text-sm bg-black-50">
+                                    <option>-- Garder même siège --</option>
+                                </select>
+                                <button type="submit"
+                                    class="bg-blue-100 text-blue-700 px-4 py-2 rounded text-sm font-semibold">Modifier</button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+
+                <section class="bg-white p-6 rounded-lg shadow">
+                    <h2 class="font-bold mb-4 pb-2 border-b text-red-600">Supprimer une réservation</h2>
+                    <form class="flex flex-col gap-4">
+                        <div>
+                            <label class="block text-sm text-black-600 mb-1">Passager réservé</label>
+                            <div class="flex gap-2">
+                                <select class="w-full border rounded p-2 text-sm bg-black-50">
+                                    <option>-- Choisir passager --</option>
+                                </select>
+                                <button type="button"
+                                    class="bg-red-100 text-red-700 px-4 py-2 rounded text-sm font-semibold">Supprimer</button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+
+            </aside>
         </div>
-        
     </main>
+
+    <footer class="text-center p-4 text-sm text-black-500 mt-auto">
+        &copy; 2026 BusDirect
+    </footer>
+
 </body>
+
+</html>
