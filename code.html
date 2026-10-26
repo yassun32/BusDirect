@@ -47,10 +47,10 @@
             <section class="md:col-span-2 bg-white rounded-lg shadow p-6">
                 <header class="flex justify-between items-center mb-6 pb-4 border-b">
                     <span class="font-semibold text-black-700"></span>
-                    <div class="text-sm text-black-600">
-                        20 places totales • 
-                        <span class="text-green-600 font-semibold">20 disponibles</span>
-                        • Recette: 80 DH
+                    <div id="totalp" class="flex space-x-4  text-sm text-black-600">
+                        <p>• places totales: 0</p>
+                        <p class="text-green-600 font-semibold">• 20 Disponibles</p>
+                        <p>• Recette: 80 DH</p>
                     </div>
                 </header>
 
@@ -95,9 +95,9 @@
                             <div class="text-lg font-bold text-green-700">7</div>
                             <p class="text-xs text-black-400">Libre</p>
                         </div>
-                        <div id="12"
+                        <div id="8"
                             class="bg-white p-4 rounded shadow border border-black-200 cursor-pointer hover:bg-black-50">
-                            <div class="text-lg font-bold text-green-700">12</div>
+                            <div class="text-lg font-bold text-green-700">8</div>
                             <p class="text-xs text-black-400">Libre</p>
                         </div>
                         <div id="9"
@@ -120,12 +120,12 @@
                             <div class="text-lg font-bold text-green-700">12</div>
                             <p class="text-xs text-black-400">Libre</p>
                         </div>
-                        <div id="12"
+                        <div id="13"
                             class="bg-white p-4 rounded shadow border border-black-200 cursor-pointer hover:bg-black-50">
-                            <div class="text-lg font-bold text-green-700">12</div>
+                            <div class="text-lg font-bold text-green-700">13</div>
                             <p class="text-xs text-black-400">Libre</p>
                         </div>
-                        <div id="12"
+                        <div id="14"
                             class="bg-white p-4 rounded shadow border border-black-200 cursor-pointer hover:bg-black-50">
                             <div class="text-lg font-bold text-green-700">12</div>
                             <p class="text-xs text-black-400">Libre</p>
@@ -170,7 +170,7 @@
 
                 <section class="bg-white p-6 rounded-lg shadow">
                     <h2 class="font-bold text-black-800 mb-4 pb-2 border-b">Réserver une place</h2>
-                    <form id="formule" class="flex flex-col gap-4">
+                    <form id="ajout" class="flex flex-col gap-4">
                         <div>
                             <label class="block text-sm text-black-600 mb-1">Passager</label>
                             <input id="nome" type="text" placeholder="Ex: Thomas Martin"
@@ -206,18 +206,20 @@
                                     class="bg-blue-700 text-white px-4 py-2 rounded text-sm font-semibold">Confirmer</button>
                             </div>
                         </div>
-                        <!-- <p class="bg-green-600 text-white px-4 py-2 rounded ">Selection un siège !</p>
-                        <p class="bg-red-600 text-white px-4 py-2 rounded ">Selection un siège !</p>-->
+                        
+                        <div id="succsus"></div>
+                        <div id="false"></div>
+                        <div id="falseNome"></div>
 
                     </form>
                 </section>
 
                 <section class="bg-white p-6 rounded-lg shadow">
                     <h2 class="font-bold text-black-800 mb-4 pb-2 border-b">Modifier une place</h2>
-                    <form class="flex flex-col gap-4">
+                    <form id="modification" class="flex flex-col gap-4">
                         <div>
                             <label class="block text-sm text-black-600 mb-1">Passager existant</label>
-                            <select class="w-full border rounded p-2 text-sm bg-black-50">
+                            <select id="choix" class="w-full border rounded p-2 text-sm bg-black-50">
                                 <option>-- Choisir passager --</option>
                             </select>
                         </div>
@@ -241,7 +243,7 @@
 
                 <section class="bg-white p-6 rounded-lg shadow">
                     <h2 class="font-bold mb-4 pb-2 border-b text-red-600">Supprimer une réservation</h2>
-                    <form class="flex flex-col gap-4">
+                    <form id="supprition" class="flex flex-col gap-4">
                         <div>
                             <label class="block text-sm text-black-600 mb-1">Passager réservé</label>
                             <div class="flex gap-2">
