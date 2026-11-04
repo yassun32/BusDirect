@@ -1,6 +1,5 @@
-# Gestion des Réservations de Places
-
-# Contexte du projet :
+#Gestion des Réservations de Places
+#Contexte du projet :
 La compagnie de transport BusDirect souhaite digitaliser la gestion des réservations de sièges sur sa ligne interurbaine Safi → Marrakech.
 
 L’agent de réservation doit pouvoir visualiser en temps réel le plan de la cabine et gérer l’attribution des places selon les disponibilités.
